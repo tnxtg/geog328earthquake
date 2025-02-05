@@ -75,6 +75,10 @@
           #side-panel {
             display: none;
           }
+
+          .fa-times-circle-o, .fa-caret-square-o-down {
+            display: none;
+          }
         }
     </style>
 </head>
@@ -94,7 +98,7 @@
                 </tr>
             </table>
         </div>
-        <i class="fa fa-caret-square-o-down" aria-hidden="true" style="position: absolute; top: 0px; right: 5px; font-size: 50px; z-index: 2; display: none;"></i>
+        <i class="fa fa-caret-square-o-down disappear" aria-hidden="true" style="position: absolute; top: 0px; right: 5px; font-size: 50px; z-index: 2;"></i>
         <div id="map"></div>
 
     </main>
@@ -220,7 +224,7 @@
           sidePanel = document.getElementById('side-panel')
           if (window.innerWidth > 1024) {
             sidePanel.classList.remove('disappear');
-            enter.style.display = 'none';
+            enter.classList.add('disappear');
           }
         })
 
@@ -229,7 +233,7 @@
           sidePanel = document.getElementById('side-panel')
           sidePanel.classList.add('disappear');
           reappear = document.getElementsByTagName("i")[1];
-          reappear.style.display = 'block'
+          reappear.classList.remove('disappear');
         })
 
         // define the function to sort table
